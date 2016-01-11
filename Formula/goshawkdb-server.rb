@@ -3,7 +3,6 @@ class GoshawkdbServer < Formula
   homepage "https://goshawkdb.io/"
   url "https://src.goshawkdb.io/server/archive/goshawkdb_0.1.tar.gz"
   sha256 "3324046db99ef1cc88309f5d10bd1136371820252de2521baea162856ab9076b"
-  head "https://src.goshawkdb.io/server/", :using => :hg, :branch => "dev"
 
   depends_on "go" => :build
   depends_on "lmdb"

@@ -1,3 +1,5 @@
+require "language/go"
+
 class GoshawkdbServer < Formula
   desc "A distributed, transactional, fault-tolerant object store"
   homepage "https://goshawkdb.io/"

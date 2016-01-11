@@ -48,7 +48,6 @@ class GoshawkdbServer < Formula
     mkdir_p gopath/"src/goshawkdb.io/"
     ln_s buildpath, gopath/"src/goshawkdb.io/server"
     ENV["GOPATH"] = gopath
-    ENV.prepend_create_path "PATH", gopath/"bin"
 
     Language::Go.stage_deps resources, gopath/"src"
 

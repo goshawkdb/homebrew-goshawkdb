@@ -54,7 +54,7 @@ class GoshawkdbServer < Formula
     Language::Go.stage_deps resources, gopath/"src"
 
     cd gopath/"src/goshawkdb.io/server/goshawkdb" do
-      system "go", "build", "-o", bin/"goshawkdb" "main.go"
+      system "go", "build", "-o", bin/"goshawkdb-server", "main.go"
     end
   end
 

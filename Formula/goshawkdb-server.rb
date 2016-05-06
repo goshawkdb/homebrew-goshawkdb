@@ -3,8 +3,8 @@ require "language/go"
 class GoshawkdbServer < Formula
   desc "A distributed, transactional, fault-tolerant object store"
   homepage "https://goshawkdb.io/"
-  url "https://src.goshawkdb.io/server/archive/goshawkdb_0.1.tar.gz"
-  sha256 "3324046db99ef1cc88309f5d10bd1136371820252de2521baea162856ab9076b"
+  url "https://src.goshawkdb.io/server/archive/goshawkdb_0.2.tar.gz"
+  sha256 "3ebdd026b08a34e483180c3cb931afd05b2062f66cfe07e1eb81b2154a4c442b"
 
   depends_on "go" => :build
   depends_on "lmdb"
@@ -26,22 +26,17 @@ class GoshawkdbServer < Formula
 
   go_resource "github.com/msackman/gomdb" do
     url "https://github.com/msackman/gomdb.git",
-      :revision => "e5477472276299169a7eda58c5f0d0d615c758c8"
+      :revision => "b380364713e00fe67c90f5867952663e95aba720"
   end
 
   go_resource "github.com/msackman/skiplist" do
     url "https://github.com/msackman/skiplist.git",
-      :revision => "57733164b18444c51f63e9a80f1693961dde8036"
-  end
-
-  go_resource "golang.org/x/crypto" do
-    url "https://go.googlesource.com/crypto.git",
-      :revision => "803f01ea27e23d998825ec085f0d153cac01c828"
+      :revision => "3669b5426fe8517d1732b490d176f372284f595d"
   end
 
   go_resource "goshawkdb.io/common" do
     url "https://src.goshawkdb.io/common",
-      :revision => "df8631857532c03a6f3b3a5a7aca6eeafa3c5629", :using => :hg
+      :revision => "f20880b28f79bec784f96f07328f653e73639d7c", :using => :hg
   end
 
 
@@ -53,7 +48,7 @@ class GoshawkdbServer < Formula
 
     Language::Go.stage_deps resources, gopath/"src"
 
-    cd gopath/"src/goshawkdb.io/server/goshawkdb" do
+    cd gopath/"src/goshawkdb.io/server/cmd/goshawkdb" do
       system "go", "build", "-o", bin/"goshawkdb-server", "main.go"
     end
   end

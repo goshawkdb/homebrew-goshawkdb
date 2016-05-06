@@ -11,7 +11,7 @@ class GoshawkdbServer < Formula
 
   go_resource "github.com/glycerine/go-capnproto" do
     url "https://github.com/glycerine/go-capnproto.git",
-      :revision => "db36ab24140ac1737830f5a0d8c87ea26f367fbb"
+      :revision => "6212efb58029e575442ea95cfa4285ef96ad4617"
   end
 
   go_resource "github.com/glycerine/rbtree" do

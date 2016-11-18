@@ -4,7 +4,7 @@ class GoshawkdbServer < Formula
   desc "A distributed, transactional, fault-tolerant object store"
   homepage "https://goshawkdb.io/"
   url "https://src.goshawkdb.io/server/archive/goshawkdb_0.3.tar.gz"
-  sha256 "3ebdd026b08a34e483180c3cb931afd05b2062f66cfe07e1eb81b2154a4c442b"
+  sha256 "ba0251721114b639d81381f70d9094b6875b8db91da402de38255af305a21ceb"
 
   depends_on "go" => :build
   depends_on "lmdb"
@@ -41,7 +41,7 @@ class GoshawkdbServer < Formula
 
   go_resource "goshawkdb.io/common" do
     url "https://src.goshawkdb.io/common",
-      :revision => "f20880b28f79bec784f96f07328f653e73639d7c", :using => :hg
+      :revision => "b116e1311fcb9b4a21deb9f8827a4eea17b5766b", :using => :hg
   end
 
 

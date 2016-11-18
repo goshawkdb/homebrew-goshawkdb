@@ -3,8 +3,8 @@ require "language/go"
 class GoshawkdbServer < Formula
   desc "A distributed, transactional, fault-tolerant object store"
   homepage "https://goshawkdb.io/"
-  url "https://src.goshawkdb.io/server/archive/goshawkdb_0.2.tar.gz"
-  sha256 "3ebdd026b08a34e483180c3cb931afd05b2062f66cfe07e1eb81b2154a4c442b"
+  url "https://src.goshawkdb.io/server/archive/goshawkdb_0.3.tar.gz"
+  sha256 "ba0251721114b639d81381f70d9094b6875b8db91da402de38255af305a21ceb"
 
   depends_on "go" => :build
   depends_on "lmdb"
@@ -19,6 +19,11 @@ class GoshawkdbServer < Formula
       :revision => "cd7940bb26b149ce2faf398e7c63fff01aa7b394"
   end
 
+  go_resource "github.com/msackman/gotimerwheel" do
+    url "https://github.com/msackman/gotimerwheel.git",
+      :revision => "d3263727885fcb6e20fbd01d29774580ec548590"
+  end
+
   go_resource "github.com/msackman/chancell" do
     url "https://github.com/msackman/chancell.git",
       :revision => "f422164a269c10a3ec7495720dc97100d598fb98"
@@ -31,12 +36,12 @@ class GoshawkdbServer < Formula
 
   go_resource "github.com/msackman/skiplist" do
     url "https://github.com/msackman/skiplist.git",
-      :revision => "3669b5426fe8517d1732b490d176f372284f595d"
+      :revision => "4c22b4dbe8ed82d9b62dd4923b3e3877242f03f4"
   end
 
   go_resource "goshawkdb.io/common" do
     url "https://src.goshawkdb.io/common",
-      :revision => "f20880b28f79bec784f96f07328f653e73639d7c", :using => :hg
+      :revision => "b116e1311fcb9b4a21deb9f8827a4eea17b5766b", :using => :hg
   end
 
 

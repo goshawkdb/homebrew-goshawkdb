@@ -3,8 +3,8 @@ require "language/go"
 class GoshawkdbServer < Formula
   desc "A distributed, transactional, fault-tolerant object store"
   homepage "https://goshawkdb.io/"
-  url "https://src.goshawkdb.io/server/archive/goshawkdb_0.3.tar.gz"
-  sha256 "ba0251721114b639d81381f70d9094b6875b8db91da402de38255af305a21ceb"
+  url "https://src.goshawkdb.io/server/archive/goshawkdb_0.3.1.tar.gz"
+  sha256 "e6c162aec0ac6d64088ba65861d5cb304127316da2f87170a885d358c485c8eb"
 
   depends_on "go" => :build
   depends_on "lmdb"
@@ -41,7 +41,7 @@ class GoshawkdbServer < Formula
 
   go_resource "goshawkdb.io/common" do
     url "https://src.goshawkdb.io/common",
-      :revision => "b116e1311fcb9b4a21deb9f8827a4eea17b5766b", :using => :hg
+      :revision => "5f63d41d5a5c6a9a4df9d76d57893ab85b85f78c", :using => :hg
   end
 
 
